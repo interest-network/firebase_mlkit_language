@@ -16,7 +16,7 @@ static FlutterError *getFlutterError(NSError *error) {
   FlutterMethodChannel *channel =
       [FlutterMethodChannel methodChannelWithName:@"firebase_mlkit_language"
                                   binaryMessenger:[registrar messenger]];
-  FLTFirebaseMlkitLanguagePlugin *instance = [[FLTFirebaseMlkitLanguagePlugin alloc] init];
+  FirebaseMlkitLanguagePlugin *instance = [[FirebaseMlkitLanguagePlugin alloc] init];
   [registrar addMethodCallDelegate:instance channel:channel];
 }
 
