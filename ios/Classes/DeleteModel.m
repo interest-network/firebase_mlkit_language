@@ -19,7 +19,7 @@
     [[FIRModelManager modelManager] deleteDownloadedModel:deModel
                                            completion:^(NSError * _Nullable error) {
                                                if (error != nil) {
-                                                   [FLTFirebaseMlkitLanguagePlugin handleError:error result:result];
+                                                   [FirebaseMlkitLanguagePlugin handleError:error result:result];
                                                    return;
                                                }
                                                result(@"Deleted");
