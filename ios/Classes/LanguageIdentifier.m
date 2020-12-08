@@ -15,7 +15,7 @@
                                 NSArray<FIRIdentifiedLanguage *> *_Nonnull identifiedLanguages,
                                 NSError *_Nullable error) {
                               if (error) {
-                                [FLTFirebaseMlkitLanguagePlugin handleError:error result:result];
+                                [FirebaseMlkitLanguagePlugin handleError:error result:result];
                                 return;
                               } else if (!identifiedLanguages) {
                                 result(@[]);
