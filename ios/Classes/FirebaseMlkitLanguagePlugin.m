@@ -1,4 +1,4 @@
-#import "FLTFirebaseMlkitLanguagePlugin.h"
+#import "FirebaseMlkitLanguagePlugin.h"
 
 static FlutterError *getFlutterError(NSError *error) {
   return [FlutterError errorWithCode:[NSString stringWithFormat:@"Error %d", (int)error.code]
@@ -6,7 +6,7 @@ static FlutterError *getFlutterError(NSError *error) {
                              details:error.localizedDescription];
 }
 
-@implementation FLTFirebaseMlkitLanguagePlugin
+@implementation FirebaseMlkitLanguagePlugin
 
 + (void)handleError:(NSError *)error result:(FlutterResult)result {
   result(getFlutterError(error));
