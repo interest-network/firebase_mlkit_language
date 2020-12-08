@@ -2,7 +2,7 @@
 
 #import "Firebase/Firebase.h"
 
-@interface FLTFirebaseMlkitLanguagePlugin : NSObject <FlutterPlugin>
+@interface FirebaseMlkitLanguagePlugin : NSObject <FlutterPlugin>
 + (void)handleError:(NSError *)error result:(FlutterResult)result;
 @end
 
