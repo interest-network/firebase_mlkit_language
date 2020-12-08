@@ -6,7 +6,7 @@
 
 + (void)result:(FlutterResult)result {
   NSSet<FIRTranslateRemoteModel *> *localModels =
-      [[FIRModelManager modelManager] availableTranslateModelsWithApp:FIRApp.defaultApp];
+        [FIRModelManager modelManager].downloadedTranslateModels;
 
   NSArray *array = localModels.allObjects;
 
