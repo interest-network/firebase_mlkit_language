@@ -34,7 +34,6 @@ flutter:
         package: io.flutter.plugins.firebase_mlkit_language
         pluginClass: FirebaseMlkitLanguagePlugin
       ios:
-        iosPrefix: FLT
         pluginClass: FirebaseMlkitLanguagePlugin
 
   # To add assets to your plugin package, add an assets section, like this:
