@@ -8,22 +8,22 @@
   FIRTranslateLanguage modelName = FIRTranslateLanguageForLanguageCode(text);
 
   NSSet<FIRTranslateRemoteModel *> *localModels =
-      [[FIRModelManager modelManager] availableTranslateModelsWithApp:FIRApp.defaultApp];
+    [FIRModelManager modelManager].downloadedTranslateModels;
 
   Boolean isModelPresent = [localModels
       containsObject:[FIRTranslateRemoteModel translateRemoteModelWithLanguage:modelName]];
 
   if (isModelPresent) {
-    [[FIRModelManager modelManager]
-        deleteDownloadedTranslateModel:[FIRTranslateRemoteModel
-                                           translateRemoteModelWithLanguage:modelName]
-                            completion:^(NSError *_Nullable error) {
-                              if (error != nil) {
-                                [FLTFirebaseMlkitLanguagePlugin handleError:error result:result];
-                                return;
-                              }
-                              result(@"Deleted");
-                            }];
+    FIRTranslateRemoteModel *deModel =
+    [FIRTranslateRemoteModel translateRemoteModelWithLanguage:modelName];
+    [[FIRModelManager modelManager] deleteDownloadedModel:deModel
+                                           completion:^(NSError * _Nullable error) {
+                                               if (error != nil) {
+                                                   [FLTFirebaseMlkitLanguagePlugin handleError:error result:result];
+                                                   return;
+                                               }
+                                               result(@"Deleted");
+                                           }];
   } else {
     result(@"Model not downloaded");
   }
