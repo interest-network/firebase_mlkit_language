@@ -22,14 +22,14 @@
       downloadModelIfNeededWithConditions:conditions
                                completion:^(NSError *_Nullable error) {
                                  if (error) {
-                                   [FLTFirebaseMlkitLanguagePlugin handleError:error result:result];
+                                   [FirebaseMlkitLanguagePlugin handleError:error result:result];
                                  }
                                  [customTranslator
                                      translateText:text
                                         completion:^(NSString *_Nullable translatedText,
                                                      NSError *_Nullable error) {
                                           if (error != nil || translatedText == nil) {
-                                            [FLTFirebaseMlkitLanguagePlugin handleError:error
+                                            [FirebaseMlkitLanguagePlugin handleError:error
                                                                                  result:result];
                                           }
                                           result(translatedText);
